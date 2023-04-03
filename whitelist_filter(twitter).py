@@ -17,7 +17,7 @@ while ws.cell(row=row_num, column=1).value is not None:
     driver.get(url)
     time.sleep(5) 
     try:
-        if ('此账号不存在' in driver.page_source) or ('账号已被冻结' in driver.page_source):
+        if ('This account does not exist' in driver.page_source) or ('This account has been suspended' in driver.page_source):
             print(f'{handle} is not a valid Twitter handle')
             ws.cell(row=row_num, column=2).value = "No"
         else:
